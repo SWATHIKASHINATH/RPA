@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recorder:ActionFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:recorder="http://www.workfusion.com/recorder/v2.0.3" ignoreDelays="false">
+  <variables>
+    <variable name="server" type="STRING" value=""/>
+    <variable name="usename" type="STRING" value=""/>
+    <variable name="password" type="STRING" value=""/>
+  </variables>
+  <actions xsi:type="recorder:TryCatchAction" active="true" actionDetails="" delay="0">
+    <tryBlock active="true">
+      <actions xsi:type="recorder:FileExistsAction" active="true" actionDetails="('C:\Users\Swathi\Desktop\test.txt')" delay="0" targetVariable="" path="C:\Users\Swathi\Desktop\test.txt"/>
+      <actions xsi:type="recorder:FileReadAction" active="true" actionDetails="('C:\Users\Swath...ktop\test.txt' to ${server})" delay="0" comment="Cannot open" targetVariable="server" path="C:\Users\Swathi\Desktop\test.txt" encoding="UTF-8"/>
+      <actions xsi:type="recorder:ClipboardAction" active="true" actionDetails="(from 'server')" delay="0" varName="server" activeConversion="STRING_TO_STRING" type="FROM_VARIABLE">
+        <stringToStringConversion targetType="STRING"/>
+        <delimitedListConversion targetType="LIST" trimValues="false"/>
+        <delimitedTableConversion targetType="TABLE" trimValues="false"/>
+      </actions>
+      <actions xsi:type="recorder:OpenSpreadsheetAction" active="true" actionDetails="(&quot;C:\Users\Swath...top\Book3.xlsx&quot;)" delay="0" filePath="C:\Users\Swathi\Desktop\Book3.xlsx" autoSaveFile="true">
+        <actions xsi:type="recorder:SetCellValueAction" varName="server" active="true" actionDetails="(Start of document)" delay="0"/>
+        <actions xsi:type="recorder:SaveSpreadsheetAction" active="true" actionDetails="" delay="50000"/>
+      </actions>
+      <actions xsi:type="recorder:OpenURLAction" active="true" actionDetails="(https://accounts.google.com)" delay="0" comment="" url="https://accounts.google.com" type="IE" actions="" waitTimeout="5000000"/>
+      <actions xsi:type="recorder:IfElseAction" active="true" actionDetails="(server = &quot;ser1&quot;)" delay="0" leftOperand="${server}" rightOperand="ser1" leftOperandType="VARIABLE" rightOperandType="STRING">
+        <ifBlock active="true">
+          <actions xsi:type="recorder:OpenSpreadsheetAction" active="true" actionDetails="(&quot;C:\Users\Swath...top\Book2.xlsx&quot;)" delay="0" filePath="C:\Users\Swathi\Desktop\Book2.xlsx">
+            <actions xsi:type="recorder:GetCellValueAction" varName="usename" active="true" actionDetails="(B1)" delay="0" useCellCoordinates="true" cellCoordinates="B1"/>
+            <actions xsi:type="recorder:GetCellValueAction" varName="password" active="true" actionDetails="(C1)" delay="0" useCellCoordinates="true" cellCoordinates="C1"/>
+          </actions>
+          <actions xsi:type="recorder:ClipboardAction" active="true" actionDetails="(from 'usename')" delay="0" varName="usename" activeConversion="STRING_TO_STRING" type="FROM_VARIABLE">
+            <stringToStringConversion targetType="STRING"/>
+            <delimitedListConversion targetType="LIST" trimValues="false"/>
+            <delimitedTableConversion targetType="TABLE" trimValues="false"/>
+          </actions>
+          <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="(Ctrl+v)" delay="0" modifiers="2" text="v" rawCode="86" keyCode="47" keyChar="118" keyLocation="1" type="HOT_KEY_PRESS"/>
+          <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="({ENTER})" delay="0" text="{ENTER}" rawCode="10" keyCode="28" keyChar="13" keyLocation="4"/>
+          <actions xsi:type="recorder:ClipboardAction" active="true" actionDetails="(from 'password')" delay="0" varName="password" activeConversion="STRING_TO_STRING" type="FROM_VARIABLE">
+            <stringToStringConversion targetType="STRING"/>
+            <delimitedListConversion targetType="LIST" trimValues="false"/>
+            <delimitedTableConversion targetType="TABLE" trimValues="false"/>
+          </actions>
+          <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="(Ctrl+v)" delay="0" modifiers="2" text="v" rawCode="86" keyCode="47" keyChar="118" keyLocation="1" type="HOT_KEY_PRESS"/>
+          <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="({ENTER})" delay="50000" text="{ENTER}" rawCode="10" keyCode="28" keyChar="13" keyLocation="4"/>
+        </ifBlock>
+        <elseBlock active="true">
+          <actions xsi:type="recorder:IfElseAction" active="true" actionDetails="(&quot;col1&quot; = &quot;ser2&quot;)" delay="0" leftOperand="col1" rightOperand="ser2" leftOperandType="STRING" rightOperandType="STRING">
+            <ifBlock active="true">
+              <actions xsi:type="recorder:OpenSpreadsheetAction" active="true" actionDetails="(&quot;C:\Users\Swath...top\Book2.xlsx&quot;)" delay="0" filePath="C:\Users\Swathi\Desktop\Book2.xlsx">
+                <actions xsi:type="recorder:GetCellValueAction" varName="usename" active="true" actionDetails="(B2)" delay="0" useCellCoordinates="true" cellCoordinates="B2"/>
+                <actions xsi:type="recorder:GetCellValueAction" varName="password" active="true" actionDetails="(C2)" delay="0" useCellCoordinates="true" cellCoordinates="C2"/>
+              </actions>
+              <actions xsi:type="recorder:ClipboardAction" active="true" actionDetails="(to 'usename')" delay="0" varName="usename" activeConversion="STRING_TO_STRING">
+                <stringToStringConversion targetType="STRING"/>
+                <delimitedListConversion targetType="LIST" trimValues="false"/>
+                <delimitedTableConversion targetType="TABLE" trimValues="false"/>
+              </actions>
+              <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="(Ctrl+v)" delay="0" modifiers="2" text="v" rawCode="86" keyCode="47" keyChar="118" keyLocation="1" type="HOT_KEY_PRESS"/>
+              <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="({ENTER})" delay="0" text="{ENTER}" rawCode="10" keyCode="28" keyChar="13" keyLocation="4"/>
+              <actions xsi:type="recorder:ClipboardAction" active="true" actionDetails="(to 'password')" delay="0" varName="password" activeConversion="STRING_TO_STRING">
+                <stringToStringConversion targetType="STRING"/>
+                <delimitedListConversion targetType="LIST" trimValues="false"/>
+                <delimitedTableConversion targetType="TABLE" trimValues="false"/>
+              </actions>
+              <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="(Ctrl+v)" delay="0" modifiers="2" text="v" rawCode="86" keyCode="47" keyChar="118" keyLocation="1" type="HOT_KEY_PRESS"/>
+              <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="({ENTER})" delay="0" text="{ENTER}" rawCode="10" keyCode="28" keyChar="13" keyLocation="4"/>
+            </ifBlock>
+            <elseBlock active="true">
+              <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="(typed text)" delay="50000" text="Wrong Username and password" type="KEY_TYPE"/>
+            </elseBlock>
+          </actions>
+        </elseBlock>
+      </actions>
+    </tryBlock>
+    <catchBlock active="true">
+      <actions xsi:type="recorder:MouseClickAction" active="true" actionDetails="(click left button)" delay="0" offsetX="-5" offsetY="11" imageName="1534922521586-anchor-1534922523794.apng" fullImageName="1534922521586.png" type="IMAGE" searchInFrames="false" webElementLocatorType="XPATH" exactMatch="true" button="1"/>
+      <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="(typed text)" delay="5000" comment="" varName="key" text="run" type="KEY_TYPE"/>
+      <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="({ENTER})" delay="0" text="{ENTER}" rawCode="10" keyCode="28" keyChar="13" keyLocation="4"/>
+      <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="(typed text)" delay="0" text="Notepad" type="KEY_TYPE"/>
+      <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="({ENTER})" delay="0" text="{ENTER}" rawCode="10" keyCode="28" keyChar="13" keyLocation="4"/>
+      <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="(typed text)" delay="0" text="Exception occured." type="KEY_TYPE"/>
+    </catchBlock>
+  </actions>
+</recorder:ActionFlow>
