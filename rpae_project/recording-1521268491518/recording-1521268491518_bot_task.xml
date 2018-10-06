@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns="http://web-harvest.sourceforge.net/schema/1.0/config" scriptlang="groovy">
+	
+        <robotics-flow>
+        <robot driver="universal" close-on-completion="false" start-in-private="false">
+		    <capability name="SEARCH_ALL_WINDOWS" value="true"/>
+            <script><![CDATA[
+
+                import com.workfusion.studio.rpa.recorder.api.*
+import com.workfusion.studio.rpa.recorder.api.types.*
+enableTypeOnScreen()
+
+
+
+        switchToExistingWindow(new WindowDescriptor("Shell_TrayWnd", "", false, false).toString(), 10000)
+
+
+                mouse().click($(byImage("1521275364104-anchor.apng", Integer.valueOf(8), Integer.valueOf(6))).getCoordinates())
+
+    sleep(3700)
+
+
+        switchToExistingWindow(new WindowDescriptor("", "(?i).*\\QMaruti\\E.*", false, true).toString(), 10000)
+
+
+                mouse().click($(byImage("1521275367988-anchor.apng", Integer.valueOf(-62), Integer.valueOf(0))).getCoordinates())
+    sleep(500)
+
+
+
+        sendKeys(StringTransformations.escapeAutoitText("mul.sales.ceo"))
+
+
+
+        sendKeys(StringTransformations.getKeyPressText(15, 9, 9, 0))
+
+
+
+        sendKeys(StringTransformations.escapeAutoitText("k@lyani123"))
+
+
+
+        sendKeys(StringTransformations.getKeyPressText(28, 13, 10, 0))
+
+    sleep(4000)
+
+
+        switchToExistingWindow(new WindowDescriptor("", "(?i).*\\QMy Page\\E.*", false, true).toString(), 10000)
+    sleep(1000)
+
+
+                mouse().click($(byImage("1521276257928-anchor.apng", Integer.valueOf(-6), Integer.valueOf(-2))).getCoordinates())
+
+    sleep(1000)
+
+
+        switchToExistingWindow(new WindowDescriptor("", "(?i).*\\QDealer\\E.*", false, true).toString(), 10000)
+
+
+                mouse().click($(byImage("1521275385263-anchor.apng", Integer.valueOf(38), Integer.valueOf(5))).getCoordinates())
+    sleep(6000)
+
+
+                mouse().click($(byImage("1521276671191-anchor-1521276671259.apng", Integer.valueOf(-21), Integer.valueOf(-25))).getCoordinates())
+
+
+
+        sendKeys(StringTransformations.escapeAutoitText("k@lyani123"))
+    sleep(5500)
+
+
+                mouse().click($(byImage("1521275396338-anchor-1521275575570.apng", Integer.valueOf(0), Integer.valueOf(0))).getCoordinates())
+
+    sleep(1200)
+
+
+        switchToExistingWindow(new WindowDescriptor("", "(?i).*\\QDealer\\E.*", false, true).toString(), 10000)
+
+    sleep(7200)
+
+
+
+        sendKeys(StringTransformations.getHotKeyText(97, 8))
+    sleep(500)
+
+
+
+        sendKeys(StringTransformations.getHotKeyText(114, 0))
+
+
+
+        sendKeys(StringTransformations.getHotKeyText(114, 0))
+    sleep(1000)
+
+
+
+        sendKeys(StringTransformations.getHotKeyText(99, 0))
+    sleep(5800)
+
+
+                mouse().click($(byImage("1521275411118-anchor.apng", Integer.valueOf(27), Integer.valueOf(2))).getCoordinates())
+    sleep(1400)
+
+
+                mouse().click($(byImage("1521275412523-anchor.apng", Integer.valueOf(14), Integer.valueOf(3))).getCoordinates())
+    sleep(1200)
+
+
+                mouse().click($(byImage("1521275413805-anchor.apng", Integer.valueOf(-106), Integer.valueOf(-4))).getCoordinates())
+    sleep(500)
+
+
+
+        sendKeys(StringTransformations.escapeAutoitText("CustomerBooking.csv"))
+    sleep(1500)
+
+
+                mouse().click($(byImage("1521275416646-anchor.apng", Integer.valueOf(45), Integer.valueOf(0))).getCoordinates())
+
+    sleep(14900)
+
+
+        switchToExistingWindow(new WindowDescriptor("", "(?i).*\\QExcel\\E.*", false, true).toString(), 10000)
+
+
+                mouse().click($(byImage("1521275431742-anchor.apng", Integer.valueOf(0), Integer.valueOf(0))).getCoordinates())
+
+    sleep(2000)
+
+
+        switchToExistingWindow(new WindowDescriptor("", "(?i).*\\QDealer Management\\E.*", false, true).toString(), 10000)
+
+
+                mouse().click($(byImage("1521275433929-anchor.apng", Integer.valueOf(47), Integer.valueOf(0))).getCoordinates())
+
+    sleep(1100)
+
+
+        switchToExistingWindow(new WindowDescriptor("", "(?i).*\\QMy Page\\E.*", false, true).toString(), 10000)
+    sleep(2900)
+
+
+                mouse().click($(byImage("1521275437999-anchor.apng", Integer.valueOf(3), Integer.valueOf(-2))).getCoordinates())
+
+
+
+            ]]></script>
+        </robot>
+    </robotics-flow>
+
+
+
+</config>

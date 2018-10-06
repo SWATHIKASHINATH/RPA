@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recorder:ActionFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:recorder="http://www.workfusion.com/recorder/v2.0.3" ignoreDelays="false">
+  <variables>
+    <variable name="username" type="STRING" value=""/>
+    <variable name="password" type="STRING" value=""/>
+  </variables>
+  <actions xsi:type="recorder:TryCatchAction" active="true" actionDetails="" delay="0">
+    <tryBlock active="true">
+      <actions xsi:type="recorder:OpenSpreadsheetAction" active="true" actionDetails="(&quot;\\KMSAP02\RPAR...ernamepwd.xlsx&quot;)" delay="0" filePath="\\KMSAP02\RPAReports\WFProjects\usernamepwd.xlsx">
+        <actions xsi:type="recorder:GetCellValueAction" varName="username" active="true" actionDetails="(A1)" delay="0" useCellCoordinates="true" cellCoordinates="A1"/>
+        <actions xsi:type="recorder:GetCellValueAction" varName="password" active="true" actionDetails="(B1)" delay="0" useCellCoordinates="true" cellCoordinates="B1"/>
+      </actions>
+      <actions xsi:type="recorder:ClipboardAction" active="true" actionDetails="(to 'username')" delay="0" varName="username" activeConversion="STRING_TO_STRING">
+        <stringToStringConversion targetType="STRING"/>
+        <delimitedListConversion targetType="LIST" trimValues="false"/>
+        <delimitedTableConversion targetType="TABLE" trimValues="false"/>
+      </actions>
+      <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="(Ctrl+v)" delay="0" modifiers="2" text="v" rawCode="86" keyCode="47" keyChar="118" keyLocation="1" type="HOT_KEY_PRESS"/>
+      <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="({TAB})" delay="0" text="{TAB}" rawCode="9" keyCode="15" keyChar="9" keyLocation="1"/>
+      <actions xsi:type="recorder:ClipboardAction" active="true" actionDetails="(to 'password')" delay="0" varName="password" activeConversion="STRING_TO_STRING">
+        <stringToStringConversion targetType="STRING"/>
+        <delimitedListConversion targetType="LIST" trimValues="false"/>
+        <delimitedTableConversion targetType="TABLE" trimValues="false"/>
+      </actions>
+      <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="(Ctrl+v)" delay="0" modifiers="2" text="v" rawCode="86" keyCode="47" keyChar="118" keyLocation="1" type="HOT_KEY_PRESS"/>
+      <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="({ENTER})" delay="0" text="{ENTER}" rawCode="10" keyCode="28" keyChar="13" keyLocation="4"/>
+    </tryBlock>
+    <catchBlock active="true" actions=""/>
+  </actions>
+</recorder:ActionFlow>
